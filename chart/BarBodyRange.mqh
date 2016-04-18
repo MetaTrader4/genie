@@ -4,10 +4,13 @@
 
 // Get Bar Body Range
 
-double BarBodyRange( const string symbol, int timeframe, int shift ) {
-    return MathAbs( iClose( symbol, timeframe, shift ) - iOpen( symbol, timeframe, shift ) );
+double BarBodyRange( const string symbol, int timeframe, int shift, bool absolute = true )  {
+    double range = iClose( symbol, timeframe, shift ) - iOpen( symbol, timeframe, shift );
+    if ( absolute )
+        return MathAbs( range );
+    return range;
 }
 
-double BarBodyRange( int shift ) {
-    return BarBodyRange( _Symbol, _Period, shift );
+double BarBodyRange( int shift, bool absolute = true ) {
+    return BarBodyRange( _Symbol, _Period, shift, absolute );
 }
