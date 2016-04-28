@@ -32,6 +32,7 @@
 #include "chart/BarTrend.mqh"
 #include "chart/ENUM_TREND.mqh"
 #include "chart/iBarShift.mqh"
+#include "chart/LineAngle.mqh"
 
 // =====================================
 // Datetime
